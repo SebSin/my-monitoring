@@ -30,3 +30,11 @@ This will create and start the containers for each service defined in the Compos
 - Cadvisor: [http://localhost:8080](http://localhost:8080)
 
 Feel free to customize the Prometheus and Grafana configurations according to your monitoring needs. Happy monitoring!
+
+## Troubleshooting
+### Docker memory usage is always 0
+https://github.com/docker/for-linux/issues/1112
+
+https://github.com/stefanprodan/dockprom/issues/228
+
+Fix: append the following to the `\boot\cmdline.txt`: `cgroup_memory=1 cgroup_enable=memory`
